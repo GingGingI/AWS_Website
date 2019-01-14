@@ -1,0 +1,5 @@
+# node_modules 폴더 ignore
+/node_modules
+
+#lint 파일 ignore
+/.eslintrc.js
