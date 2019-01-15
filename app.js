@@ -11,6 +11,10 @@ app.listen(port, () => {
   console.log(`app is Listening at ${port}`);
 });
 
+app.get('/ping', (req, res) => {
+  res.send('it\'s work');
+});
+
 app.get('/', (req, res) => {
   res.status(200);
   res.render('index', {
