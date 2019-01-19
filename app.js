@@ -12,13 +12,9 @@ app.listen(port, () => {
 });
 
 app.get('/ping', (req, res) => {
-  res.send('it\'s work');
+  res.status(200);
+  res.contentType('text/html');
+  res.send('it\'s work!');
 });
 
-app.get('/', (req, res) => {
-  res.status(200);
-  res.render('index', {
-    title: 'index',
-    SayHello: 'Hello EC2!!!',
-  });
-});
+require('./router/index')(app);

@@ -1,0 +1,67 @@
+<html>
+  <head>
+  <title><%= title %></title>
+  <script>
+
+  var direction = false;
+  var jap = 0;
+  var teabo = '@(^0^)@';
+  var cnt = 0;
+  </script>
+  </head>
+  <body>
+    <h6>태보 트레이너 : <%= trainer %></h6>
+    <h4 id="teabo">@(^0^)@</h4>
+  </body>
+  <script>
+
+  var player = document.getElementById('teabo')
+
+  setInterval(() => {
+    player.innerHTML = teabo
+    if (direction) {
+      // Left
+      switch (jap) {
+      case 0:
+        teabo = '@(^0^)@';
+        cnt = 1;
+        jap += cnt;
+        direction = !direction;
+       break;
+      case 1:
+        teabo = '@=(^0^)@';
+        jap += cnt;
+        break;
+      case 2:
+        teabo = '@==(^0^)@';
+        cnt = -1;
+        jap += cnt;
+        break;
+      default:
+        break;
+      }
+    } else {
+    // Right
+    switch (jap) {
+      case 0:
+        teabo = '@(^0^)@';
+        cnt = 1;
+        jap += cnt;
+        direction = !direction;
+        break;
+      case 1:
+        teabo = '@(^0^)=@';
+        jap += cnt;
+        break;
+      case 2:
+        teabo = '@(^0^)==@';
+        cnt = -1;
+        jap += cnt;
+        break;
+      default:
+       break;
+      }
+    }
+  }, 1000);
+  </script>
+</html>
