@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/GingGingI/AWS_Website#readme",
   "dependencies": {
+    "aws-sdk": "^2.392.0",
     "ejs": "^2.6.1",
     "eslint-config-airbnb": "^17.1.0",
     "express": "^4.16.4"

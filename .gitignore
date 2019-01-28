@@ -3,3 +3,6 @@
 
 #lint 파일 ignore
 /.eslintrc.js
+
+#config 파일
+/*.conf
