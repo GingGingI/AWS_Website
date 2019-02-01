@@ -8,6 +8,9 @@ AWS.config.update({
   endpoint: 'https://dynamodb.ap-northeast-2.amazonaws.com',
 });
 
+// if (err) return (err, null);
+// return (null, data);
+
 exports.CreateTable = (params) => {
   dynamodb.createTable(params, (err, data) => {
     if (err) console.error('unable to create table. ERR Json =>', JSON.stringify(err, null, 2));
@@ -56,7 +59,7 @@ exports.dataScan = (params) => {
         console.log(`${item.Artist} : ${item.SongTitle} - ${item.info.rating}`);
       });
 
-      if (typeof data.LastEvaluatedKey != 'undefined') {
+      if (typeof data.LastEvaluatedKey !== 'undefined') {
         console.log('scanning for ...');
         params.ExclusiveStartKey = data.LastEvaluatedKey;
         docClient.scan(params, this);
